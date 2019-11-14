@@ -89,6 +89,11 @@ public String addEmploye(Model model) {
 	return ("addEmploye");
 }
 
+@RequestMapping(value="saveEmploye", method = RequestMethod.POST)
+public String saveEmploye(Model model, @ModelAttribute("employe") Employee e) {
+	service.addEmploye(e);
+	return ("redirect:/home");
+}
 
 @RequestMapping(value = "/deleteProjet/{num}", method = RequestMethod.GET)
 public String deleteProjet(Model model, @PathVariable("num") int num) {
@@ -113,7 +118,6 @@ return ("redirect:/home");
 @RequestMapping(value = "/updateProjet/{num}", method = RequestMethod.GET)
 public String getProjet(Model model, @PathVariable("num") int num) {
 	List<Departement> listD = service.getAllDepartement(); 
-
 	Projet p = service.getProjetByNum(num);
 	model.addAttribute("projet", p);
 	model.addAttribute("departements", listD);

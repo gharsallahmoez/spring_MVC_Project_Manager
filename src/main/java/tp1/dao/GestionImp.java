@@ -243,7 +243,7 @@ public class GestionImp implements IGestion{
 	public void updateProjet(Projet p) {
 		try {
 			Connection con = data.getConnection();
-		PreparedStatement stmt=con.prepareStatement("update projet set titre = ? , etat = ? , dept = ? where num=?");
+		PreparedStatement stmt=con.prepareStatement("UPDATE projet set titre=?,etat=?,dept=? where num=?");
 		stmt.setString(1,p.getTitre());
 		stmt.setInt(2,p.getEtat());
 		stmt.setInt(3,p.getDepartement().getNumero());
@@ -253,6 +253,7 @@ public class GestionImp implements IGestion{
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			System.out.println(e);
 			e.printStackTrace();
 		}
 	}

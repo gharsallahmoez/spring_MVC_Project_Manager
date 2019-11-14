@@ -11,6 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<c:set var="cxt" value="${pageContext.request.contextPath}" />
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -34,7 +35,7 @@
 </tr>
 </c:forEach>
 </table>
-<a href='../../ajoutEmploye'>Ajouter un employe</a>
+<a href='${cxt}/ajoutEmploye'>Ajouter un employe</a>
 
 </body>
 </html>

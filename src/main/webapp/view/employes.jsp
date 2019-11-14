@@ -11,6 +11,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<c:set var="cxt" value="${pageContext.request.contextPath}" />
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -30,12 +32,12 @@
 <td> ${employe.numero}</td>
 <td> ${employe.nom}</td>
 <td> ${employe.fonction}</td>
-<td><a href='../../deleteEmploye/${employe.numero}'>supprimer</a></td>
+<td><a href='${cxt}/deleteEmploye/${employe.numero}'>supprimer</a></td>
 
 </tr>
 </c:forEach>
 </table>
-<a href='../../ajoutEmploye'>Ajouter un employe</a>
+<a href='${cxt}/ajoutEmploye'>Ajouter un employe</a>
 
 
 </body>

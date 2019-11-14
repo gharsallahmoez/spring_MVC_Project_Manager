@@ -7,11 +7,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<c:set var="cxt" value="${pageContext.request.contextPath}" />
 </head>
 <body>
 <h1>Modifier un Projet</h1>
-<form:form  action="updateProject" modelAttribute="projet" method="POST" >
+<form:form  action="${cxt}/updateProject" modelAttribute="projet" method="POST" >
     <table>
+    <form:input type="hidden" path="numero" />
         <tr>
             <td>titre</td>
             <td><form:input type="text" path="titre" /></td>
